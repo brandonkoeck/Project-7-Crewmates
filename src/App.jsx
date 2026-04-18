@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home'
 import Create from './pages/Create'
 import Gallery from './pages/Gallery'
+import Edit from './pages/Edit'
 import './App.css'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/create" element={<Create />} />
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/edit/:id" element={<Edit />} />
       </Routes>
     </Router>
   )
