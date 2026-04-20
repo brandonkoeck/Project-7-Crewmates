@@ -62,15 +62,20 @@ export default function Gallery() {
       <div className="pokemon-grid">
         {pokemon.map(p => (
           <div key={p.id} className="pokemon-card">
-            {getImageUrl(p.pokemon) && (
-              <img 
-                src={getImageUrl(p.pokemon)} 
-                alt={p.pokemon}
-                onError={(e) => e.target.style.display = 'none'}
-                style={{ width: '100%', height: '200px', objectFit: 'contain' }}
-              />
-            )}
-            <h2>{p.name}</h2>
+            <div 
+              onClick={() => navigate(`/detail/${p.id}`)}
+              style={{ cursor: 'pointer' }}
+            >
+              {getImageUrl(p.pokemon) && (
+                <img 
+                  src={getImageUrl(p.pokemon)} 
+                  alt={p.pokemon}
+                  onError={(e) => e.target.style.display = 'none'}
+                  style={{ width: '100%', height: '200px', objectFit: 'contain' }}
+                />
+              )}
+              <h2 style={{ cursor: 'pointer', textDecoration: 'underline' }}>{p.name}</h2>
+            </div>
             <p><strong>Pokemon:</strong> {p.pokemon}</p>
             <p><strong>Speed:</strong> {p.speed}</p>
             <button onClick={() => navigate(`/edit/${p.id}`)}>Edit</button>
