@@ -46,7 +46,7 @@ export default function Create() {
     setLoading(true)
 
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('pokemon')
         .insert([
           {
